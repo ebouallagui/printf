@@ -6,18 +6,18 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 19:25:37 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/08 17:30:38 by eboualla         ###   ########.fr       */
+/*   Updated: 2026/05/08 18:58:04 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
 // checks type of descriptor and handles it
-void	check_conv(const char *str, va_list args, int i)
+static void	check_conv(const char *str, va_list args, int i)
 {
 	if (str[i + 1] == d)
 		handle_int(va_arg(args, int));
 	else if (str[i] == c)
-		handle_char(va_arg(args, char);
+		handle_char(va_arg(args, char));
 }
 
 int	ft_printf(const char *str, ...)
