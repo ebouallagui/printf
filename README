@@ -1,0 +1,35 @@
+*This project has been created as part of the 42 curriculum by eboualla.*
+
+# ft_printf
+---
+## Description
+
+...
+
+## Instructions
+
+### Compilation
+
+To compile the library, run:
+
+```bash
+
+make        # builds the library
+make clean  # removes object files
+make fclean # removes object files and the library
+make re     # fully rebuilds the project
+
+```
+---
+
+## Resources
+printf man page
+stdarg man page
+https://www.geeksforgeeks.org/c/variadic-functions-in-c/
+https://en.wikipedia.org/wiki/Printf
+
+### AI Usage
+
+ChatGPT was used as a learning assistant during the development of this project for:
+
+All code was written and tested manually. AI was used only for explanations, debugging help, and conceptual understanding.
