@@ -6,14 +6,16 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 10:21:31 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/09 13:19:45 by eboualla         ###   ########.fr       */
+/*   Updated: 2026/05/09 14:47:48 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../ft_printf.h"
 
-void handle_p(void *ptr, char *base, int *count)
+void	handle_p(void *ptr, char *base, int *count)
 {
-	unsigned int i = (unsigned int)ptr;
-	handle_x(i, base, count);
+	unsigned long	l;
+
+	l = (unsigned long)ptr;
+	handle_x(l, base, count);
 	return ;
 }

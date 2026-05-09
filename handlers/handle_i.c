@@ -6,15 +6,22 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 08:40:03 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/09 13:11:37 by eboualla         ###   ########.fr       */
+/*   Updated: 2026/05/09 14:41:30 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../ft_printf.h"
 
-void	handle_i(int i)
+void	handle_i(int i, int *count)
 {
-	ft_putnbr_fd(i, 1);
-	return (numlen(i));
-}
+	long	n;
 
-//was ist bei -0?? len bleibt bei 1
+	n = i;
+	if (n < 0)
+	{
+		ft_putchar('-', count);
+		n = -n;
+	}
+	if (n >= 10)
+		handle_i(n / 10, count);
+	ft_putchar((n % 10) + '0', count);
+}

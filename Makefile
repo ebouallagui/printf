@@ -6,7 +6,7 @@
 #    By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/08 18:36:33 by eboualla          #+#    #+#              #
-#    Updated: 2026/05/09 09:05:51 by eboualla         ###   ########.fr        #
+#    Updated: 2026/05/09 14:51:07 by eboualla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,13 @@ AR = ar rcs
 RM = rm -f
 
 SRC = ft_printf.c \
-	  handlers/handle_char.c \
-	  handlers/handle_int.c \
+	  main.c \
+	  handlers/ft_putchar.c \
+	  handlers/handle_c.c \
+	  handlers/handle_i.c \
+	  handlers/handle_p.c \
+	  handlers/handle_s.c \
+	  handlers/handle_x.c \
 	  libft/libft.a
 
 OBJ = $(SRC:.c=.o)

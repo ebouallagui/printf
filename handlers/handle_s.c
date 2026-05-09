@@ -6,12 +6,17 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 09:52:39 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/09 10:21:07 by eboualla         ###   ########.fr       */
+/*   Updated: 2026/05/09 14:45:46 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../ftprintf.h"
+#include "../ft_printf.h"
 
-int	handle_s(char *s)
+void	handle_s(char *s, int *count)
 {
-	ft_putstr_fd(s, 1);
+	while (*s)
+	{
+		ft_putchar(*s, count);
+		s++;
+	}
+	return ;
 }
