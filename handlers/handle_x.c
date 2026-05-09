@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   handle_x.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/03 19:27:39 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/09 08:44:54 by eboualla         ###   ########.fr       */
+/*   Created: 2026/05/09 10:37:48 by eboualla          #+#    #+#             */
+/*   Updated: 2026/05/09 13:21:28 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "../ft_printf.h"
 
-#ifndef FT_PRINTF
-# define FT_PRINTF
+void	handle_x(unsigned int i, char *base, int *count)
+{
+	unsigned long	n;
 
-# include <stdarg.h>
-# include "libft.h"
-
-int	ft_printf(const char *str, ...);
-
-int handle_char(int c);
-int handle_int(int i);
-
-#endif
+	n = i;
+	if (i >= 16)
+		handle_x(n / 16, base, count);
+	ft_putchar(base[n % 16], count);
+	ft_putchar('0', count);
+	ft_putchar('x', count);
+}

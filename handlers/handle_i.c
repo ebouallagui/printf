@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   handle_i.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/03 19:27:39 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/09 08:44:54 by eboualla         ###   ########.fr       */
+/*   Created: 2026/05/09 08:40:03 by eboualla          #+#    #+#             */
+/*   Updated: 2026/05/09 13:11:37 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "../ft_printf.h"
 
-#ifndef FT_PRINTF
-# define FT_PRINTF
+void	handle_i(int i)
+{
+	ft_putnbr_fd(i, 1);
+	return (numlen(i));
+}
 
-# include <stdarg.h>
-# include "libft.h"
-
-int	ft_printf(const char *str, ...);
-
-int handle_char(int c);
-int handle_int(int i);
-
-#endif
+//was ist bei -0?? len bleibt bei 1

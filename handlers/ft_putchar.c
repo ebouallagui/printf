@@ -1,24 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/03 19:27:39 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/09 08:44:54 by eboualla         ###   ########.fr       */
+/*   Created: 2026/05/09 12:54:51 by eboualla          #+#    #+#             */
+/*   Updated: 2026/05/09 12:55:59 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF
-# define FT_PRINTF
-
-# include <stdarg.h>
-# include "libft.h"
-
-int	ft_printf(const char *str, ...);
-
-int handle_char(int c);
-int handle_int(int i);
-
-#endif
+void ft_putchar(char c, int *count)
+{
+	write(1, &c, 1);
+	(*count)++;
+}

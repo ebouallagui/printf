@@ -6,18 +6,34 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 19:25:37 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/08 18:58:04 by eboualla         ###   ########.fr       */
+/*   Updated: 2026/05/09 13:24:40 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-// checks type of descriptor and handles it
-static void	check_conv(const char *str, va_list args, int i)
+// checks type of descriptor & conversion and handles it
+static void	check_conv(const char *str, va_list args, int i, int *count)
 {
-	if (str[i + 1] == d)
-		handle_int(va_arg(args, int));
-	else if (str[i] == c)
-		handle_char(va_arg(args, char));
+	char	des;
+
+	des = str[i + 1];
+	if (des == 'c')
+		handle_c(va_arg(args, int), &count);
+	else if (des == 's')
+		handle_s(va_arg(args, char *), &count);
+	else if (des == 'p')
+		handle_p(va_args(args, void *), "0123456789abcdef", &count);
+	else if (des == 'd' || des == 'i')
+		handle_i(va_args(args, int), &count);
+	else if (des == 'u')
+		handle_u(va_args(args, unsigned int), &count);
+	else if (des == 'x')
+		handle_x(va_args(args, unsigned int), "0123456789abcdef", &count);
+	else if (des == 'X')
+		handle_x(va_args(args, unsigned int), "0123456789ABCDEF", &count);
+	else if (des == '%')
+		ft_putchar('%', &count);
+	return (0);
 }
 
 int	ft_printf(const char *str, ...)
@@ -35,27 +51,10 @@ int	ft_printf(const char *str, ...)
 			write(1, &str[i], 1);
 		else
 		{
-			if (str[i + 1] == '%')
-				write(1, '%', 1);
-			else
-				check_conv(str, args, i);
+			check_conv(str, args, i, &count);
+			i++;
 		}
 		i++;
 	}
 	return (count);
-}
-
-#include <stdio.h>
-
-int	main(void)
-{
-	int		i;
-	char	c;
-	char	*s;
-
-	i = 5;
-	c = 'e';
-	s = "Hello";
-	ft_printf("Hello%d or %c", i, c);
-	printf("Hello%d or %c", i, c);
 }
