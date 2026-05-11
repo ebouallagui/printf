@@ -6,7 +6,7 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 19:25:37 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/11 18:54:08 by eboualla         ###   ########.fr       */
+/*   Updated: 2026/05/11 22:26:06 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -27,9 +27,9 @@ static void	check_conv(const char *format, va_list args, int i, int *count)
 	else if (des == 'u')
 		handle_u(va_arg(args, unsigned int), "0123456789", count);
 	else if (des == 'x')
-		handle_x(va_arg(args, unsigned int), "0123456789abcdef", count);
+		handle_x(va_arg(args, unsigned long), "0123456789abcdef", count);
 	else if (des == 'X')
-		handle_x(va_arg(args, unsigned int), "0123456789ABCDEF", count);
+		handle_x(va_arg(args, unsigned long), "0123456789ABCDEF", count);
 	else if (des == '%')
 		ft_putchar('%', count);
 	return ;
@@ -60,12 +60,12 @@ int	ft_printf(const char *format, ...)
 	}
 	return (count);
 }
-/*
+
 #include <stdio.h>
 
 int	main(void)
 {
-	int				i;
+	int				a;
 	char			c;
 	char			*s;
 	unsigned int	hex;
@@ -78,17 +78,15 @@ int	main(void)
 	hex = 44;
 	heX = 44;
 	u = 123456;
-	i = 5;
+	a = 0;
 	c = 'e';
 	s = "Hello";
-	ptr = &i;
-	res1 = (ft_printf("int%d, char%c, string%s, hex%x, heX%X, u%u, void%p also
-				%%l", i, c, s, hex, heX, u, ptr));
+	ptr = &a;
+	res1 = ft_printf("int%d, char%c, string%s, hex%x, heX%X, u%u, void%p also %%", a, c, s, hex, heX, u, ptr);
 	printf("\n");
-	res2 = (printf("int%d, char%c, string%s, hex%x, heX%X, u%u, void%p also
-				%%l", i, c, s, hex, heX, u, ptr));
+	res2 = printf("int%d, char%c, string%s, hex%x, heX%X, u%u, void%p also %%", a, c, s, hex, heX, u, ptr);
 	printf("\n");
-	printf("return (1 = %d, return 2 = %d", res1, res2));
+	printf("return 1 = %d, return 2 = %d", res1, res2);
 	printf("\n");
+	return (0);
 }
-*/
