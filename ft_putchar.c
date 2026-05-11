@@ -6,7 +6,7 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 12:54:51 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/11 13:42:22 by eboualla         ###   ########.fr       */
+/*   Updated: 2026/05/11 14:07:47 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -15,4 +15,5 @@ void	ft_putchar(char c, int *count)
 {
 	write(1, &c, 1);
 	(*count)++;
+	return ;
 }

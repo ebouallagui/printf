@@ -6,13 +6,16 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 10:37:48 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/11 13:44:09 by eboualla         ###   ########.fr       */
+/*   Updated: 2026/05/11 18:50:30 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-void	handle_x(unsigned long l, char *base, int *count)
+void	handle_x(unsigned int i, char *base, int *count)
 {
+	unsigned long	l;
+
+	l = i;
 	if (l >= 16)
 		handle_x(l / 16, base, count);
 	ft_putchar(base[l % 16], count);

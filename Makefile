@@ -1,4 +1,4 @@
-# **************************************************************************** #
+:X
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,7 +6,7 @@
 #    By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/08 18:36:33 by eboualla          #+#    #+#              #
-#    Updated: 2026/05/11 13:41:34 by eboualla         ###   ########.fr        #
+#    Updated: 2026/05/11 18:51:06 by eboualla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,11 @@ RM = rm -f
 SRC = ft_printf.c \
 	  main.c \
 	  ft_putchar.c \
-	  handle_c.c \
 	  handle_i.c \
 	  handle_p.c \
 	  handle_s.c \
 	  handle_x.c \
+	  handle_u.c
 
 OBJ = $(SRC:.c=.o)
 
