@@ -20,6 +20,13 @@ The project focuses on deepening understanding of variadic funtions, parsing and
 
 ## Instructions
 
+## Algorithm & Data Structure
+
+The algorithm works by scanning the format string one character at a time.  
+If a conversion specifier is found after %, the corresponding handler function is called to print the argument.
+
+The implementation relies on va_list for handling variadic arguments and uses separate helper functions for each data type to keep the code organized and maintainable.
+
 ### Compilation
 
 To compile the library, run:
@@ -35,8 +42,8 @@ make re     # fully rebuilds the project
 ---
 
 ## Resources
-printf man page
-stdarg man page
+printf man page  
+stdarg man page  
 https://www.geeksforgeeks.org/c/variadic-functions-in-c/  
 https://en.wikipedia.org/wiki/Printf  
 https://www.hackerearth.com/practice/notes/void-pointer-in-c/#:~:text=A%20void%20pointer%20is%20a,be%20typcasted%20to%20any%20type.&text=Note%20that%20the%20above%20program,of%20malloc%20to%20(int%20*).
