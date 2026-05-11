@@ -1,7 +1,7 @@
 *This project has been created as part of the 42 curriculum by eboualla.*
 
 # ft_printf
----
+
 ## Description
 
 A custom implementation of the standard C "printf" function, that supports formatted output through various conversion specifiers:
@@ -20,7 +20,7 @@ The project focuses on deepening understanding of variadic funtions, parsing and
 
 ## Instructions
 
-## Algorithm & Data Structure
+### Algorithm & Data Structure
 
 The algorithm works by scanning the format string one character at a time.  
 If a conversion specifier is found after %, the corresponding handler function is called to print the argument.
