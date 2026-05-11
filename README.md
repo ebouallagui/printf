@@ -37,8 +37,8 @@ make re     # fully rebuilds the project
 ## Resources
 printf man page
 stdarg man page
-https://www.geeksforgeeks.org/c/variadic-functions-in-c/
-https://en.wikipedia.org/wiki/Printf
+https://www.geeksforgeeks.org/c/variadic-functions-in-c/  
+https://en.wikipedia.org/wiki/Printf  
 https://www.hackerearth.com/practice/notes/void-pointer-in-c/#:~:text=A%20void%20pointer%20is%20a,be%20typcasted%20to%20any%20type.&text=Note%20that%20the%20above%20program,of%20malloc%20to%20(int%20*).
 
 ### AI Usage
