@@ -6,14 +6,14 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 19:27:39 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/09 14:50:57 by eboualla         ###   ########.fr       */
+/*   Updated: 2026/05/11 13:42:51 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include "libft.h"
+# include <unistd.h> 
 # include <stdarg.h>
 
 int		ft_printf(const char *str, ...);

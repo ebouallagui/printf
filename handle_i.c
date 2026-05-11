@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   handle_i.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/09 13:23:59 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/11 13:46:07 by eboualla         ###   ########.fr       */
+/*   Created: 2026/05/09 08:40:03 by eboualla          #+#    #+#             */
+/*   Updated: 2026/05/11 13:43:08 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
-#include <stdio.h>
 
-int	main(void)
+void	handle_i(int i, int *count)
 {
-	int		i;
-	char	c;
-	char	*s;
-	int		hex;
+	long	n;
 
-	hex = 9;
-	i = 5;
-	c = 'e';
-	s = "Hello";
-	ft_printf("integer%d or %x %ccharacter string%s, also %%", i, hex, c, s);
-	printf("\n");
-	printf("integer%d or %x %ccharacter string%s, also %%", i, hex, c, s);
-	printf("\n");
+	n = i;
+	if (n < 0)
+	{
+		ft_putchar('-', count);
+		n = -n;
+	}
+	if (n >= 10)
+		handle_i(n / 10, count);
+	ft_putchar((n % 10) + '0', count);
 }

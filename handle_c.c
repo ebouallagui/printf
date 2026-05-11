@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   handle_c.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/09 13:23:59 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/11 13:46:07 by eboualla         ###   ########.fr       */
+/*   Created: 2026/05/09 08:27:02 by eboualla          #+#    #+#             */
+/*   Updated: 2026/05/11 13:43:40 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
-#include <stdio.h>
 
-int	main(void)
+void	handle_c(int c, int *count)
 {
-	int		i;
-	char	c;
-	char	*s;
-	int		hex;
-
-	hex = 9;
-	i = 5;
-	c = 'e';
-	s = "Hello";
-	ft_printf("integer%d or %x %ccharacter string%s, also %%", i, hex, c, s);
-	printf("\n");
-	printf("integer%d or %x %ccharacter string%s, also %%", i, hex, c, s);
-	printf("\n");
+	ft_putchar(c, count);
+	return ;
 }

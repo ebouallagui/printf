@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/09 13:23:59 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/11 13:46:07 by eboualla         ###   ########.fr       */
+/*   Created: 2026/05/09 12:54:51 by eboualla          #+#    #+#             */
+/*   Updated: 2026/05/11 13:42:22 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
-#include <stdio.h>
 
-int	main(void)
+void	ft_putchar(char c, int *count)
 {
-	int		i;
-	char	c;
-	char	*s;
-	int		hex;
-
-	hex = 9;
-	i = 5;
-	c = 'e';
-	s = "Hello";
-	ft_printf("integer%d or %x %ccharacter string%s, also %%", i, hex, c, s);
-	printf("\n");
-	printf("integer%d or %x %ccharacter string%s, also %%", i, hex, c, s);
-	printf("\n");
+	write(1, &c, 1);
+	(*count)++;
 }

@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   handle_x.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/09 13:23:59 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/11 13:46:07 by eboualla         ###   ########.fr       */
+/*   Created: 2026/05/09 10:37:48 by eboualla          #+#    #+#             */
+/*   Updated: 2026/05/11 13:44:09 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
-#include <stdio.h>
 
-int	main(void)
+void	handle_x(unsigned long l, char *base, int *count)
 {
-	int		i;
-	char	c;
-	char	*s;
-	int		hex;
-
-	hex = 9;
-	i = 5;
-	c = 'e';
-	s = "Hello";
-	ft_printf("integer%d or %x %ccharacter string%s, also %%", i, hex, c, s);
-	printf("\n");
-	printf("integer%d or %x %ccharacter string%s, also %%", i, hex, c, s);
-	printf("\n");
+	if (l >= 16)
+		handle_x(l / 16, base, count);
+	ft_putchar(base[l % 16], count);
+	return ;
 }
