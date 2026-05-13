@@ -6,7 +6,7 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 19:25:37 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/11 22:26:06 by eboualla         ###   ########.fr       */
+/*   Updated: 2026/05/13 15:06:34 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -81,7 +81,7 @@ int	main(void)
 	a = 0;
 	c = 'e';
 	s = "Hello";
-	ptr = &a;
+	ptr = NULL;
 	res1 = ft_printf("int%d, char%c, string%s, hex%x, heX%X, u%u, void%p also %%", a, c, s, hex, heX, u, ptr);
 	printf("\n");
 	res2 = printf("int%d, char%c, string%s, hex%x, heX%X, u%u, void%p also %%", a, c, s, hex, heX, u, ptr);
