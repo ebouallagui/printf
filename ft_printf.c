@@ -6,7 +6,7 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 19:25:37 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/11 22:26:06 by eboualla         ###   ########.fr       */
+/*   Updated: 2026/05/23 09:11:07 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -39,7 +39,7 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	size_t	i;
-	int		count;
+	int		count;//static?!
 
 	i = 0;
 	count = 0;
