@@ -22,7 +22,7 @@ void	ft_putchar(char c, int *count);
 void	handle_i(int i, int *count);
 void	handle_p(void *ptr, char *base, int *count);
 void	handle_s(char *s, int *count);
-void	handle_x(unsigned long l, char *base, int *count);
+void	handle_x(unsigned int i, char *base, int *count);
 void	handle_u(unsigned int i, char *base, int *count);
 
 #endif

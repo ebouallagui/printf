@@ -11,10 +11,10 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-void	handle_x(unsigned long l, char *base, int *count)
+void	handle_x(unsigned int i, char *base, int *count)
 {
-	if (l >= 16)
-		handle_x(l / 16, base, count);
-	ft_putchar(base[l % 16], count);
+	if (i >= 16)
+		handle_x(i / 16, base, count);
+	ft_putchar(base[i % 16], count);
 	return ;
 }

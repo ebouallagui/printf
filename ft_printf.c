@@ -6,30 +6,30 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 19:25:37 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/29 11:11:17 by eboualla         ###   ########.fr       */
+/*   Updated: 2026/05/29 12:54:57 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-static void	check_conv(const char *format, va_list args, int i, int *count)
+static void	check_conv(const char *format, va_list *args, int i, int *count)
 {
 	char	des;
 
 	des = format[i + 1];
 	if (des == 'c')
-		ft_putchar(va_arg(args, int), count);
+		ft_putchar(va_arg(*args, int), count);
 	else if (des == 's')
-		handle_s(va_arg(args, char *), count);
+		handle_s(va_arg(*args, char *), count);
 	else if (des == 'p')
-		handle_p(va_arg(args, void *), "0123456789abcdef", count);
+		handle_p(va_arg(*args, void *), "0123456789abcdef", count);
 	else if (des == 'd' || des == 'i')
-		handle_i(va_arg(args, int), count);
+		handle_i(va_arg(*args, int), count);
 	else if (des == 'u')
-		handle_u(va_arg(args, unsigned int), "0123456789", count);
+		handle_u(va_arg(*args, unsigned int), "0123456789", count);
 	else if (des == 'x')
-		handle_x(va_arg(args, unsigned long), "0123456789abcdef", count);
+		handle_x(va_arg(*args, unsigned int), "0123456789abcdef", count);
 	else if (des == 'X')
-		handle_x(va_arg(args, unsigned long), "0123456789ABCDEF", count);
+		handle_x(va_arg(*args, unsigned int), "0123456789ABCDEF", count);
 	else if (des == '%')
 		ft_putchar('%', count);
 	return ;
@@ -46,17 +46,15 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i])
 	{
-		if (format[i] != '%')
+		if (format[i] == '%' && format[i + 1])
 		{
-			write(1, &format[i], 1);
-			count++;
-		}
-		else
-		{
-			if (format[i + 1])
-				check_conv(format, args, i, &count);
+			check_conv(format, &args, i, &count);
 			i++;
 		}
+		else if (format[i] == '%' && !format[i + 1])
+			ft_putchar('%', &count);
+		else
+			ft_putchar(format[i], &count);
 		i++;
 	}
 	va_end(args);

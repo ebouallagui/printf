@@ -11,6 +11,13 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
+void	handle_ul(unsigned long l, char *base, int *count)
+{
+	if (l >= 16)
+		handle_ul(l / 16, base, count);
+	ft_putchar(base[l % 16], count);
+}
+
 void	handle_p(void *ptr, char *base, int *count)
 {
 	unsigned long	l;
@@ -22,6 +29,6 @@ void	handle_p(void *ptr, char *base, int *count)
 	}
 	handle_s("0x", count);
 	l = (unsigned long)ptr;
-	handle_x(l, base, count);
+	handle_ul(l, base, count);
 	return ;
 }

@@ -13,6 +13,8 @@
 
 void	handle_s(char *s, int *count)
 {
+	if (!s)
+		s = "(null)";
 	while (*s)
 	{
 		ft_putchar(*s, count);
