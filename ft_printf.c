@@ -6,11 +6,7 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 19:25:37 by eboualla          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2026/05/23 09:11:07 by eboualla         ###   ########.fr       */
-=======
-/*   Updated: 2026/05/13 15:06:34 by eboualla         ###   ########.fr       */
->>>>>>> a96d46e4134b7742655c38c2ca88f94652da0b39
+/*   Updated: 2026/05/29 11:07:09 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -43,7 +39,7 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	size_t	i;
-	int		count;//static?!
+	int		count;
 
 	i = 0;
 	count = 0;
@@ -57,11 +53,13 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 		{
-			check_conv(format, args, i, &count);
+			if (format[i + 1])
+				check_conv(format, args, i, &count);
 			i++;
 		}
 		i++;
 	}
+	va_end(args);
 	return (count);
 }
 
