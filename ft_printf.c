@@ -6,7 +6,7 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 19:25:37 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/29 11:07:09 by eboualla         ###   ########.fr       */
+/*   Updated: 2026/05/29 11:11:17 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -62,7 +62,7 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -84,11 +84,14 @@ int	main(void)
 	c = 'e';
 	s = "Hello";
 	ptr = NULL;
-	res1 = ft_printf("int%d, char%c, string%s, hex%x, heX%X, u%u, void%p also %%", a, c, s, hex, heX, u, ptr);
+	res1 = ft_printf("int%d, char%c, string%s, hex%x, heX%X, u%u, void%p also
+			%%", a, c, s, hex, heX, u, ptr);
 	printf("\n");
-	res2 = printf("int%d, char%c, string%s, hex%x, heX%X, u%u, void%p also %%", a, c, s, hex, heX, u, ptr);
+	res2 = printf("int%d, char%c, string%s, hex%x, heX%X, u%u, void%p also %%",
+			a, c, s, hex, heX, u, ptr);
 	printf("\n");
-	printf("return 1 = %d, return 2 = %d", res1, res2);
+	printf("return (1 = %d, return 2 = %d", res1, res2));
 	printf("\n");
 	return (0);
 }
+*/

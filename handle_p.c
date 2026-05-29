@@ -6,7 +6,7 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 10:21:31 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/13 15:04:21 by eboualla         ###   ########.fr       */
+/*   Updated: 2026/05/29 11:10:46 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -14,7 +14,7 @@
 void	handle_p(void *ptr, char *base, int *count)
 {
 	unsigned long	l;
-	
+
 	if (ptr == 0)
 	{
 		handle_s("(nil)", count);
