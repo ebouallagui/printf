@@ -20,7 +20,7 @@ The project focuses on deepening understanding of variadic funtions, parsing and
 
 ### Undefined Behavior
 
-In the case of undefined behavior, the program either behaves like the original `printf`, as in “abc%”, or returns the entered string exactly as entered, as in “ab%z”.
+In the case of undefined behavior, the program behaves like the original `printf`, as in “abc%” or “ab%y”, and returns the entered string without the %-sign at the end or exactly as entered.
 
 ## Instructions
 

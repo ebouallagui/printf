@@ -112,9 +112,9 @@ int res1 = printf("abc%");
 printf("\n");
 printf("mein1: %d,\nres1: %d", mein1, res1);
 printf("\n");
-int mein2 = ft_printf("ab%z");
+int mein2 = ft_printf("ab%y");
 printf("\n");
-int res2 = printf("ab%z");
+int res2 = printf("ab%y");
 printf("\n");
 printf("mein2: %d,\n res2: %d", mein2, res2);
 }
