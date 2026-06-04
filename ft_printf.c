@@ -52,7 +52,7 @@ int	ft_printf(const char *format, ...)
 			i++;
 		}
 		else if (format[i] == '%' && !format[i + 1])
-			ft_putchar('%', &count);
+			return(count);
 		else
 			ft_putchar(format[i], &count);
 		i++;
@@ -60,11 +60,11 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-/*
+
 #include <stdio.h>
 
 int	main(void)
-{
+{/*
 	int				a;
 	char			c;
 	char			*s;
@@ -91,5 +91,15 @@ int	main(void)
 	printf("return (1 = %d, return 2 = %d", res1, res2));
 	printf("\n");
 	return (0);
+	*/
+
+
+	int meins = ft_printf("abcd%");
+	printf("\n");
+	int original = printf("abcd%");
+	printf("\n");
+
+	printf("mein = %d,\n original = %d", meins, original);
+
 }
-*/
+
