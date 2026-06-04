@@ -18,6 +18,10 @@ A custom implementation of the standard C "printf" function, that supports forma
 
 The project focuses on deepening understanding of variadic funtions, parsing and low-level output handling in C.
 
+### Undefined Behavior
+
+In the case of undefined behavior, the program either behaves like the original `printf`, as in “abc%”, or returns the entered string exactly as entered, as in “ab%z”.
+
 ## Instructions
 
 ### Algorithm & Data Structure

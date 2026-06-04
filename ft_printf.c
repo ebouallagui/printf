@@ -32,6 +32,11 @@ static void	check_conv(const char *format, va_list *args, int i, int *count)
 		handle_x(va_arg(*args, unsigned int), "0123456789ABCDEF", count);
 	else if (des == '%')
 		ft_putchar('%', count);
+	else
+	{
+		ft_putchar('%', count);
+		ft_putchar(des, count);
+	}
 	return ;
 }
 
@@ -52,7 +57,7 @@ int	ft_printf(const char *format, ...)
 			i++;
 		}
 		else if (format[i] == '%' && !format[i + 1])
-			return(count);
+			return (-1);
 		else
 			ft_putchar(format[i], &count);
 		i++;
@@ -60,11 +65,11 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
-{/*
+{
 	int				a;
 	char			c;
 	char			*s;
@@ -91,15 +96,26 @@ int	main(void)
 	printf("return (1 = %d, return 2 = %d", res1, res2));
 	printf("\n");
 	return (0);
-	*/
+	
 
 
-	int meins = ft_printf("abcd%");
+	int meins = ft_printf("hallo %z hallo");
 	printf("\n");
-	int original = printf("abcd%");
+	int original = printf("hallo %z hallo");
 	printf("\n");
 
 	printf("mein = %d,\n original = %d", meins, original);
 
+int mein1 = ft_printf("abc%");
+printf("\n");
+int res1 = printf("abc%");
+printf("\n");
+printf("mein1: %d,\nres1: %d", mein1, res1);
+printf("\n");
+int mein2 = ft_printf("ab%z");
+printf("\n");
+int res2 = printf("ab%z");
+printf("\n");
+printf("mein2: %d,\n res2: %d", mein2, res2);
 }
-
+*/
