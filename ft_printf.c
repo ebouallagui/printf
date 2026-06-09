@@ -6,7 +6,7 @@
 /*   By: eboualla <eboualla@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 19:25:37 by eboualla          #+#    #+#             */
-/*   Updated: 2026/05/29 12:54:57 by eboualla         ###   ########.fr       */
+/*   Updated: 2026/06/09 19:16:44 by eboualla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -57,7 +57,7 @@ int	ft_printf(const char *format, ...)
 			i++;
 		}
 		else if (format[i] == '%' && !format[i + 1])
-			return (-1);
+			return (va_end(args), -1);
 		else
 			ft_putchar(format[i], &count);
 		i++;
